@@ -44,6 +44,4 @@ class DeviseCreateUsers < ActiveRecord::Migration[6.1]
 
 
   end
-　 add_index :schools, :name, unique: true
-
 end

@@ -1,13 +1,12 @@
 class BooksController < ApplicationController
   def new
-    @book = Book.new
   end
 
   def create
     @book = Book.new(book_params)
-    @user = current_user
     @books = Book.all
     @book.user_id = current_user.id
+    @user = current_user
    if @book.save
     flash[:notice] = "You have created book successfully."
     redirect_to book_path(@book.id)
